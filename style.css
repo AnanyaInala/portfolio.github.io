@@ -1164,35 +1164,42 @@ footer{
 }
 
 /* Scroll Reveal Animations */
+/* Default: content visible (no-js fallback) */
 .reveal{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* When JS is active (no-js removed), apply hidden initial state */
+html:not(.no-js) .reveal{
     opacity:0;
     transform:translateY(50px);
     transition:all 0.9s ease;
 }
 
-.reveal.show{
+html:not(.no-js) .reveal.show{
     opacity:1;
     transform:translateY(0);
 }
 
-.reveal-left{
+html:not(.no-js) .reveal-left{
     opacity:0;
     transform:translateX(-60px);
     transition:all 0.9s ease;
 }
 
-.reveal-left.show{
+html:not(.no-js) .reveal-left.show{
     opacity:1;
     transform:translateX(0);
 }
 
-.reveal-right{
+html:not(.no-js) .reveal-right{
     opacity:0;
     transform:translateX(60px);
     transition:all 0.9s ease;
 }
 
-.reveal-right.show{
+html:not(.no-js) .reveal-right.show{
     opacity:1;
     transform:translateX(0);
 }

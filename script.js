@@ -2,18 +2,24 @@
 // Ananya Inala Portfolio - Interactive Scripts
 // ============================================
 
+// Enable JS-driven animations (removes the no-js fallback class)
+document.documentElement.classList.remove('no-js');
+
+// ============================================
 // Custom Cursor Glow
+// ============================================
 const cursorGlow = document.getElementById('cursorGlow');
 document.addEventListener('mousemove', (e) => {
+    if (!cursorGlow) return;
     cursorGlow.style.left = e.clientX + 'px';
     cursorGlow.style.top = e.clientY + 'px';
 });
 
 document.addEventListener('mouseout', () => {
-    cursorGlow.style.opacity = '0';
+    if (cursorGlow) cursorGlow.style.opacity = '0';
 });
 document.addEventListener('mouseover', () => {
-    cursorGlow.style.opacity = '1';
+    if (cursorGlow) cursorGlow.style.opacity = '1';
 });
 
 // ============================================
@@ -265,6 +271,10 @@ revealElements.forEach(el => revealObserver.observe(el));
 const statNumbers = document.querySelectorAll('.stat-number');
 
 const animateCounter = (element) => {
+    // Prevent re-triggering
+    if (element.dataset.animated) return;
+    element.dataset.animated = 'true';
+
     const target = parseFloat(element.getAttribute('data-target'));
     const decimals = parseInt(element.getAttribute('data-decimal')) || 0;
     const duration = 2000;
@@ -290,16 +300,49 @@ const animateCounter = (element) => {
     requestAnimationFrame(updateCounter);
 };
 
-const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            statObserver.unobserve(entry.target);
+// Function to check if an element is in the viewport
+function isInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+        rect.top < window.innerHeight &&
+        rect.bottom > 0
+    );
+}
+
+// Animate counters that are already in view on load
+function animateVisibleCounters() {
+    statNumbers.forEach(el => {
+        if (isInViewport(el)) {
+            animateCounter(el);
         }
     });
-}, { threshold: 0.5 });
+}
 
-statNumbers.forEach(el => statObserver.observe(el));
+// Fallback using scroll listener in case IntersectionObserver fails
+window.addEventListener('scroll', () => {
+    statNumbers.forEach(el => {
+        if (isInViewport(el)) {
+            animateCounter(el);
+        }
+    });
+});
+
+// Also try IntersectionObserver if supported
+if ('IntersectionObserver' in window) {
+    const statObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounter(entry.target);
+                statObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+
+    statNumbers.forEach(el => statObserver.observe(el));
+}
+
+// Run after a short delay to catch elements already in view
+setTimeout(animateVisibleCounters, 500);
 
 // ============================================
 // Animated Skill Bars
