@@ -8,161 +8,422 @@
 </head>
 <body>
 
-    <nav>
-        <h2>Ananya Inala</h2>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+    <!-- Custom Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Canvas Particle Background -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Floating Gradient Orbs -->
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+
+    <!-- Navbar -->
+<nav id="navbar">
+        <h2 class="logo">Ananya<span class="logo-dot">.</span></h2>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#experience" class="nav-link">Internships</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#education" class="nav-link">Education</a></li>
+            <li><a href="#leadership" class="nav-link">Leadership</a></li>
+            <li><a href="#certifications" class="nav-link">Certifications</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <img src="profile.jpg" alt="Ananya Inala">
-            <h1>Ananya Inala</h1>
-            <h3>AI/ML & Generative AI Enthusiast</h3>
-            <p>Exploring AI, GenAI, RAG, LangChain & LangGraph</p>
+            <div class="profile-ring">
+                <img src="assets/profile.jpg" alt="Ananya Inala">
+            </div>
+            <h1 class="glitch" data-text="Ananya Inala">Ananya Inala</h1>
+            <h3 class="typing" id="typingText"></h3>
+            <p>Building end-to-end AI/ML pipelines, containerized deployments & full-stack AI applications.</p>
 
             <div class="buttons">
-                <a href="https://github.com/AnanyaInala" target="_blank">GitHub</a>
-                <a href="https://linkedin.com/in/ananya-inala/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/AnanyaInala" target="_blank" class="btn-primary">
+                    <span>GitHub</span>
+                </a>
+                <a href="https://linkedin.com/in/ananya-inala/" target="_blank" class="btn-secondary">
+                    <span>LinkedIn</span>
+                </a>
+                <a href="assets/Ananya_Inala_Resume_Python.pdf" target="_blank" class="btn-outline">
+                    <span>Resume</span>
+                </a>
+            </div>
+
+            <div class="hero-scroll">
+                <span>Scroll Down</span>
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            Final-year Computer Science student with experience in AI/ML projects,
-            backend development, and LLM-powered applications. Hands-on experience
-            building AI solutions using Ollama, Gemini, Flask, and machine learning
-            models. Currently learning RAG, LangChain, and LangGraph.
-        </p>
-    </section>
-
-    <section id="skills" class="section">
-        <h2>Technical Skills</h2>
-
-        <div class="card">
-            <h3>Programming Languages</h3>
-            <p>Java, Python, SQL</p>
+    <!-- Stats Bar -->
+    <section class="stats">
+        <div class="stat">
+            <span class="stat-number" data-target="8.79" data-decimal="2">0</span>
+            <span class="stat-label">CGPA</span>
         </div>
-
-        <div class="card">
-            <h3>Generative AI</h3>
-            <p>Prompt Engineering, Ollama, Gemini API, RAG, LangChain, LangGraph</p>
+        <div class="stat">
+            <span class="stat-number" data-target="3" data-decimal="0">0</span>
+            <span class="stat-label">Internships / Leadership Roles</span>
         </div>
-
-        <div class="card">
-            <h3>Backend Technologies</h3>
-            <p>Spring Boot, Flask, REST APIs, Hibernate, JPA</p>
+        <div class="stat">
+            <span class="stat-number" data-target="94.4" data-decimal="1">0</span>
+            <span class="stat-label">% Accuracy</span>
         </div>
-
-        <div class="card">
-            <h3>Databases</h3>
-            <p>MySQL, MongoDB, PostgreSQL</p>
-        </div>
-
-        <div class="card">
-            <h3>Tools & Platforms</h3>
-            <p>Maven, Postman, Git, GitHub, IntelliJ IDEA, VS Code</p>
+        <div class="stat">
+            <span class="stat-number" data-target="4" data-decimal="0">0</span>
+            <span class="stat-label">Projects Built</span>
         </div>
     </section>
 
-    <section id="experience" class="section">
-        <h2>Experience</h2>
-
-        <div class="card">
-            <h3>AI/ML Intern - Infosys Springboard</h3>
-            <span>Dec 2025 – Feb 2026</span>
-            <ul>
-                <li>Built EcoPackAI for packaging cost and CO₂ prediction.</li>
-                <li>Worked with Random Forest and XGBoost models.</li>
-                <li>Developed Flask APIs and PostgreSQL logging.</li>
-            </ul>
-        </div>
-
-        <div class="card">
-            <h3>AI/ML Intern - AICTE Edunet Foundation</h3>
-            <span>Jun 2025 – Jul 2025</span>
-            <ul>
-                <li>Built classification models.</li>
-                <li>Applied cross-validation and model evaluation.</li>
-                <li>Improved model performance and reliability.</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="projects" class="section">
-        <h2>Projects</h2>
-
-        <div class="card">
-            <h3>CareNav AI</h3>
-            <p>
-                AI-assisted healthcare triage system using Gemini, NLP, Flask,
-                React and MongoDB.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>AI File Classifier</h3>
-            <p>
-                Built using Ollama models for intelligent file classification and
-                content-based categorization.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>EcoPackAI</h3>
-            <p>
-                ML-powered sustainability prediction system for packaging cost
-                and CO₂ emissions.
-            </p>
+    <!-- About Section -->
+    <section id="about" class="section reveal">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    Computer Science undergraduate with hands-on experience building Python-based AI/ML
+                    and backend applications. Skilled in <strong>Flask, FastAPI, Docker</strong> and REST API
+                    development, with exposure to generative AI tools such as the <strong>Gemini API, LangChain,
+                    and RAG</strong>.
+                </p>
+                <p>
+                    Experienced in building end-to-end ML pipelines, containerized deployments, and full-stack
+                    AI applications — backed by two AI/ML internships and a healthcare AI project achieving
+                    <strong class="highlight">94.4% classification accuracy</strong>.
+                </p>
+                <div class="about-badges">
+                    <span>🎓 B.Tech CSE</span>
+                    <span>🐍 Python</span>
+                    <span>🐳 Docker</span>
+                    <span>🤖 GenAI</span>
+                </div>
+            </div>
+            <div class="about-card">
+                <div class="about-icon">🎯</div>
+                <h3>What I Do</h3>
+                <p>Design intelligent systems that combine machine learning, scalable backends, and modern tooling to solve real-world problems.</p>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2>Achievements</h2>
+    <!-- Skills Section -->
+    <section id="skills" class="section reveal">
+        <h2 class="section-title">Technical <span>Skills</span></h2>
 
-        <div class="card">
-            <ul>
-                <li>Founder of MDFCH</li>
-                <li>Class Representative (CR)</li>
-                <li>Participant - Pragathi Cohort 4</li>
-            </ul>
+        <div class="skills-grid">
+            <div class="skill-card reveal">
+                <div class="skill-header">
+                    <span>💻</span>
+                    <h3>Languages</h3>
+                </div>
+                <ul class="skill-chips">
+                    <li>Python</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                    <li>JavaScript</li>
+                </ul>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="85%">Python</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="75%">Java</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="80%">SQL</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="70%">JavaScript</div>
+                </div>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-header">
+                    <span>⚙️</span>
+                    <h3>Backend & Deployment</h3>
+                </div>
+                <ul class="skill-chips">
+                    <li>Flask</li>
+                    <li>FastAPI</li>
+                    <li>REST APIs</li>
+                    <li>Docker</li>
+                    <li>Spring Boot</li>
+                </ul>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="88%">Flask</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="80%">FastAPI</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="82%">Docker</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="70%">Spring Boot</div>
+                </div>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-header">
+                    <span>🤖</span>
+                    <h3>AI/ML & GenAI</h3>
+                </div>
+                <ul class="skill-chips">
+                    <li>Random Forest</li>
+                    <li>XGBoost</li>
+                    <li>Logistic Regression</li>
+                    <li>NLP</li>
+                    <li>Feature Engineering</li>
+                    <li>Gemini API</li>
+                    <li>LangChain</li>
+                    <li>RAG</li>
+                </ul>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="85%">Machine Learning</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="78%">NLP</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="75%">GenAI</div>
+                </div>
+            </div>
+
+            <div class="skill-card reveal">
+                <div class="skill-header">
+                    <span>🗄️</span>
+                    <h3>Databases & Tools</h3>
+                </div>
+                <ul class="skill-chips">
+                    <li>PostgreSQL</li>
+                    <li>MySQL</li>
+                    <li>MongoDB</li>
+                    <li>Git</li>
+                    <li>Postman</li>
+                    <li>VS Code</li>
+                </ul>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="85%">PostgreSQL</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="80%">MySQL</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="75%">MongoDB</div>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-bar-fill" data-width="80%">Git & GitHub</div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2>Certifications</h2>
+    <!-- Experience Section (Timeline) -->
+    <section id="experience" class="section reveal">
+        <h2 class="section-title">Work <span>Experience</span></h2>
 
-        <div class="card">
-            <ul>
-                <li>Programming in Java - NPTEL Elite</li>
-                <li>Artificial Intelligence: Concepts and Techniques - NPTEL</li>
-                <li>Cambridge English: C1 Advanced</li>
-            </ul>
+        <div class="timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content card">
+                    <span class="timeline-date">Jun 2026 – Sep 2026 (Current)</span>
+                    <h3>AI/ML Intern — Neurocraft Innovations Pvt. Ltd.</h3>
+                    <ul>
+                        <li>Working on Docker containerization of a FastAPI-based AI application, packaging the service and its dependencies for consistent, reproducible deployment.</li>
+                        <li>Collaborating with the engineering team to structure Dockerfiles and containerized environments for an existing Python/FastAPI codebase.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content card">
+                    <span class="timeline-date">Dec 2025 – Feb 2026</span>
+                    <h3>AI/ML Intern — Infosys Springboard</h3>
+                    <ul>
+                        <li>Built EcoPackAI, an AI-powered packaging recommendation platform estimating packaging cost and CO₂ emissions.</li>
+                        <li>Developed Random Forest and XGBoost regression models achieving R² up to 0.775, exposed via Flask REST APIs.</li>
+                        <li>Integrated PostgreSQL for pipeline logging, building an end-to-end ML workflow from data input to prediction output.</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2>Contact</h2>
+    <!-- Projects Section -->
+    <section id="projects" class="section reveal">
+        <h2 class="section-title">Featured <span>Projects</span></h2>
 
-        <div class="card">
-            <p>Email: inalaananya@gmail.com</p>
-            <p>Phone: +91 7842825731</p>
-            <p>Location: Telangana, India</p>
+        <div class="projects-grid">
+            <div class="project-card card tilt reveal">
+                <div class="project-icon">🏥</div>
+                <span class="project-tech">Python · Flask · React · MongoDB · Gemini API</span>
+                <h3>CareNav AI — Healthcare Navigation Platform</h3>
+                <p>
+                    Full-stack healthcare navigation app integrating the Gemini API for NLP-based guidance,
+                    achieving 94.4% classification accuracy and a 93.5% F1 score.
+                </p>
+                <ul>
+                    <li>Hash-based health record verification and QR code generation for secure record access.</li>
+                    <li>Designed REST APIs connecting a React frontend with a Flask backend and MongoDB database.</li>
+                </ul>
+                <div class="project-tags">
+                    <span>Gemini</span><span>NLP</span><span>Flask</span><span>React</span><span>MongoDB</span>
+                </div>
+            </div>
+
+            <div class="project-card card tilt reveal">
+                <div class="project-icon">📦</div>
+                <span class="project-tech">Python · Flask · PostgreSQL · Random Forest · XGBoost</span>
+                <h3>EcoPackAI — AI Packaging Recommendation Platform</h3>
+                <p>
+                    ML-driven platform predicting packaging cost and CO₂ emissions, with models reaching
+                    R² up to 0.775.
+                </p>
+                <ul>
+                    <li>Built and deployed Flask REST APIs with PostgreSQL-backed logging for the full prediction pipeline.</li>
+                </ul>
+                <div class="project-tags">
+                    <span>Random Forest</span><span>XGBoost</span><span>Flask</span><span>PostgreSQL</span>
+                </div>
+            </div>
+
+            <div class="project-card card tilt reveal">
+                <div class="project-icon">💳</div>
+                <span class="project-tech">Java · Spring Boot · MySQL · REST APIs</span>
+                <h3>FinFlow — UPI Transaction Simulator</h3>
+                <p>
+                    UPI simulation platform with transaction processing APIs and account management workflows.
+                </p>
+                <ul>
+                    <li>Designed REST APIs and a MySQL schema for handling multi-step financial transaction flows.</li>
+                </ul>
+                <div class="project-tags">
+                    <span>Java</span><span>Spring Boot</span><span>MySQL</span><span>REST API</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section reveal">
+        <h2 class="section-title">Educ<span>ation</span></h2>
+        <div class="education-card card reveal">
+            <div class="edu-icon">🎓</div>
+            <div class="edu-info">
+                <h3>B.Tech, Computer Science Engineering</h3>
+                <span>Malla Reddy Engineering College for Women, Telangana, India</span>
+                <p>Expected Graduation: 2027 &nbsp;|&nbsp; CGPA: <strong>8.79</strong></p>
+                <div class="edu-badges">
+                    <span>Leadership</span><span>Academics</span><span>Projects</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section id="leadership" class="section reveal">
+        <h2 class="section-title">Leadership & <span>Achievements</span></h2>
+        <div class="leadership-grid">
+            <div class="leadership-card card tilt reveal">
+                <div class="lead-icon">👩‍💻</div>
+                <h3>Founder & Community Lead</h3>
+                <p>Microsoft Data Forge Community Hyderabad — organized technical sessions and coordinated industry speakers.</p>
+            </div>
+            <div class="leadership-card card tilt reveal">
+                <div class="lead-icon">🏛️</div>
+                <h3>President</h3>
+                <p>CSI Student Chapter</p>
+            </div>
+            <div class="leadership-card card tilt reveal">
+                <div class="lead-icon">🎓</div>
+                <h3>Class Representative</h3>
+                <p>Represented the class for 3 years.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section reveal">
+        <h2 class="section-title">Certificat<span>ions</span></h2>
+        <div class="cert-grid">
+            <div class="cert-card reveal">
+                <span class="cert-icon">☕</span>
+                <p>Programming in Java <strong>(Elite)</strong></p>
+                <span class="cert-org">NPTEL</span>
+            </div>
+            <div class="cert-card reveal">
+                <span class="cert-icon">🧠</span>
+                <p>Artificial Intelligence: Concepts and Techniques</p>
+                <span class="cert-org">NPTEL</span>
+            </div>
+            <div class="cert-card reveal">
+                <span class="cert-icon">🐍</span>
+                <p>Python Essentials</p>
+                <span class="cert-org">Cisco Networking Academy</span>
+            </div>
+            <div class="cert-card reveal">
+                <span class="cert-icon">🗣️</span>
+                <p>Cambridge English: C1 Advanced</p>
+                <span class="cert-org">Cambridge</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal">
+        <h2 class="section-title">Get In <span>Touch</span></h2>
+
+        <div class="contact-grid">
+            <div class="contact-card card reveal">
+                <span class="contact-icon">📧</span>
+                <h3>Email</h3>
+                <a href="mailto:inalaananya@gmail.com">inalaananya@gmail.com</a>
+            </div>
+            <div class="contact-card card reveal">
+                <span class="contact-icon">📱</span>
+                <h3>Phone</h3>
+                <a href="tel:+917842825731">+91 78428 25731</a>
+            </div>
+            <div class="contact-card card reveal">
+                <span class="contact-icon">📍</span>
+                <h3>Location</h3>
+                <p>Hyderabad, Telangana, India</p>
+            </div>
+            <div class="contact-card card reveal">
+                <span class="contact-icon">🌐</span>
+                <h3>Portfolio</h3>
+                <a href="https://ananyainala.github.io/portfolio" target="_blank">ananyainala.github.io/portfolio</a>
+            </div>
+        </div>
+
+        <div class="social-links">
+            <a href="https://github.com/AnanyaInala" target="_blank" class="social-btn">GitHub</a>
+            <a href="https://linkedin.com/in/ananya-inala/" target="_blank" class="social-btn">LinkedIn</a>
+            <a href="assets/Ananya_Inala_Resume_Python.pdf" target="_blank" class="social-btn">Download Resume</a>
         </div>
     </section>
 
     <footer>
-        <p>© 2026 Ananya Inala | Portfolio</p>
+        <p>© 2026 Ananya Inala | Crafted with &#10084;&#65039; by Ananya Inala</p>
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 </html>
+</content>
+
