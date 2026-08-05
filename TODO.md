@@ -25,5 +25,6 @@
 - [x] Responsive mobile design
 
 ## Testing
-- [ ] Open in browser and verify animations
+- [x] Open in browser and verify animations
+- [x] Fix animations on GitHub Pages (no-js removal, defer script, null checks)
 </content>
